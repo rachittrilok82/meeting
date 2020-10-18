@@ -6,13 +6,13 @@ import (
 	"github.com/BurntSushi/toml"
 )
 
-// Represents database server and credentials
+// These show the database connection
 type Config struct {
 	Server   string
 	Database string
 }
 
-// Read and parse the configuration file
+// These are use to read the credentials of the database
 func (c *Config) Read() {
 	if _, err := toml.DecodeFile("config.toml", &c); err != nil {
 		log.Fatal(err)
